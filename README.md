@@ -1,3 +1,6 @@
+# WP5 Cloud Connectors
+This project contains a standalone service that exposes a webdav interface to various public cloud providers.
+
 ### Installation
 
 In a virtualenv, run the following:
@@ -14,6 +17,7 @@ At the moment, there is no mechanism for associating an ldap user to, for exampl
 Only read operations (list a directory, get a file) are supported. Write operations are not implemented at this point.
 
 ### Provider Specific information
+For providers that need an OAuth2 token (Dropbox, Google Drive), it is necessary to have a separate web interface to handle the authorization flow.
 ##### S3
 The token is a json hash with keys: access_key_id, secret_access_key, bucket_name
 ##### Google Drive
