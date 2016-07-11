@@ -26,5 +26,14 @@ The token is the OAuth2 token.
 The token is the OAuth2 token.
 
 
+### Code architecture overview
+
+- dispatch.py contains the HTTP layer, that listens on /webdav/
+- providers.py contains the classes implementing the translation from the clouds internal api format to the standard webdav format.
+  - the ProviderManager class is the generic class it acts both as in interface definition and as a place where the generic parts of the translation are stored.
+  - S3Manager, DboxManager, GdriveManager classes are concrete implementations of the interface provided by ProviderManager.
+- the clouds/ subdirectory contains modules that implement the actual connection to the clouds.
+
+
 ### TODO
 1. Figure out how to dynamically pass credentials for new users
